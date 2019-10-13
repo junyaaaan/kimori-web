@@ -1,0 +1,5 @@
+:root{
+  --mainColor: #00f;
+}
+
+@custom-media --mobile (max-width: 415px);

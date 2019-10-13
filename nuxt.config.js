@@ -23,7 +23,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/css/variables.css', '~/assets/css/reset.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -47,6 +47,17 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    postcss: {
+      plugins: {
+        'postcss-custom-properties': {},
+        'postcss-custom-media': {}
+      },
+      preset: {
+        autoprefixer: {
+          grid: true
+        }
+      }
+    }
     // extend(config, ctx) {}
   }
 }
