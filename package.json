@@ -1,0 +1,30 @@
+{
+  "name": "kimori-web",
+  "version": "1.0.0",
+  "description": "My good Nuxt.js project",
+  "author": "junya takayama",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start",
+    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "@nuxt/typescript-runtime": "^0.2.1",
+    "nuxt": "^2.10.1"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "^0.3.1",
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-config-typescript": "^0.1.3",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.16.4"
+  }
+}
