@@ -1,5 +1,10 @@
 :root{
-  --mainColor: #00f;
+  /* colors */
+  --mainColor: #DEBB69;
+  --subClor: #E0D0C1;
+
+  /* fonts */
+  --defaultFontSize: 16px;
 }
 
 @custom-media --mobile (max-width: 415px);
