@@ -64,7 +64,7 @@ button {
 
 button:hover,
 button:active {
-  stroke: var(--subClor);
+  stroke: var(--subColor);
 }
 
 .icon__top,
