@@ -5,7 +5,12 @@
       <li><nuxt-link to="/about/">About</nuxt-link></li>
       <li><nuxt-link to="/gallery/">Gallery</nuxt-link></li>
       <li><nuxt-link to="/biography/">Biography</nuxt-link></li>
-      <li><nuxt-link to="/contact/">Contact</nuxt-link></li>
+      <li>
+        <nuxt-link
+          to="https://docs.google.com/forms/d/e/1FAIpQLSc6gt01XJe8M3i3X-nMZ4SNCecsCF9ZBDnbNo-LQgy5cdxdSA/viewform?usp=sf_link"
+          >Contact</nuxt-link
+        >
+      </li>
     </ul>
   </nav>
 </template>
