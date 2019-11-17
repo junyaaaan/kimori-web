@@ -1,6 +1,8 @@
 <template>
   <header>
-    <h1><nuxt-link to="/">Keiichiro</nuxt-link><span>AartWorks</span></h1>
+    <h1>
+      <nuxt-link to="/">Kimori Keiichiro</nuxt-link><span>AartWorks</span>
+    </h1>
 
     <MenuButton :is-open="menuIsOpen" @toggleMenu="toggleMenu" />
 
