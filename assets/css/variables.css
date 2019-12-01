@@ -2,8 +2,11 @@
   /* colors */
   --mainColor: #DEBB69;
   --subColor: #E0D0C1;
+  --linkColor: #698DDE;
+  --defaultTextColor: #695B5B;
 
   /* fonts */
+  --largeFontSize:26px;
   --defaultFontSize: 16px;
 }
 
