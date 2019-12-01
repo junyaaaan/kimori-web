@@ -1,8 +1,8 @@
 <template>
   <header>
-    <h1>
+    <p class="logo">
       <nuxt-link to="/">Kimori Keiichiro</nuxt-link><span>AartWorks</span>
-    </h1>
+    </p>
 
     <MenuButton :is-open="menuIsOpen" @toggleMenu="toggleMenu" />
 
@@ -46,22 +46,22 @@ header {
   position: relative;
 }
 
-h1 {
+.logo {
   font-weight: normal;
   font-size: 20px;
 }
 
-h1 a {
+.logo a {
   color: var(--mainColor);
   text-decoration: none;
 }
 
-h1 a:hover,
-h1 a:active {
+.logo a:hover,
+.logo a:active {
   color: var(--subColor);
 }
 
-h1 span {
+.logo span {
   color: var(--subColor);
   font-size: var(--defaultFontSize);
   margin-left: 8px;
