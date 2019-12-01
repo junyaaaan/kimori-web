@@ -1,10 +1,9 @@
 <template>
   <nav>
     <ul class="drawer">
-      <li><nuxt-link to="/">Top</nuxt-link></li>
-      <li><nuxt-link to="/about/">About</nuxt-link></li>
-      <li><nuxt-link to="/gallery/">Gallery</nuxt-link></li>
-      <li><nuxt-link to="/biography/">Biography</nuxt-link></li>
+      <li v-for="(category, index) in categorysData" :key="index">
+        <nuxt-link :to="category.path">{{ category.name }}</nuxt-link>
+      </li>
       <li>
         <nuxt-link
           to="https://docs.google.com/forms/d/e/1FAIpQLSc6gt01XJe8M3i3X-nMZ4SNCecsCF9ZBDnbNo-LQgy5cdxdSA/viewform?usp=sf_link"
@@ -18,7 +17,30 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  data() {
+    return {
+      categorysData: [
+        {
+          name: 'Top',
+          path: '/'
+        },
+        {
+          name: 'About',
+          path: '/about/'
+        },
+        {
+          name: 'Gallery',
+          path: '/gallery/'
+        },
+        {
+          name: 'Biography',
+          path: '/biography/'
+        }
+      ]
+    }
+  }
+})
 </script>
 
 <style lang="postcss" scoped>
@@ -37,9 +59,6 @@ nav {
   display: block;
   border-bottom: 1px solid var(--subColor);
   text-decoration: none;
-}
-
-.drawer li a:hover {
-  background: #f00;
+  color: var(--mainColor);
 }
 </style>
