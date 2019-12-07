@@ -4,10 +4,13 @@
   --subColor: #E0D0C1;
   --linkColor: #698DDE;
   --defaultTextColor: #695B5B;
+  --gray: #CCC;
 
   /* fonts */
-  --largeFontSize:26px;
-  --defaultFontSize: 16px;
+  --largeFontSize: 1.6rem;
+  --largeMiddleFontSize: 1.3rem;
+  --defaultFontSize: 1rem;
+  --minFontSize: 0.81rem;
 }
 
 @custom-media --mobile (max-width: 415px);
