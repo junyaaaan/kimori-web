@@ -7,8 +7,8 @@ import Vue from 'vue'
 export default Vue.extend({
   props: {
     tag: {
-      type: String,
-      default: '1'
+      type: Number,
+      default: 1
     },
     level: {
       type: Number,
