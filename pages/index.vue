@@ -21,34 +21,13 @@
         っていうのをvエモくかいたりする自己紹介とこのサイトはこういうところっていうのをエモくかいたりする
       </p>
 
-      <section class="biographys">
+      <section>
         <HeadingBasic :tag="2" :level="1">Biography</HeadingBasic>
-        <ul class="biographys__list">
-          <li v-for="(biography, index) in biographys" :key="index">
-            <p class="biographys__img">
-              <img
-                :src="
-                  require(`~/assets/images/biography/${biography.id}/img.png`)
-                "
-                :srcset="
-                  `
-            ${require(`~/assets/images/biography/${biography.id}/img.png`)} 1x,
-            ${require(`~/assets/images/biography/${biography.id}/img@2x.png`)} 2x
-            `
-                "
-                alt=""
-              />
-            </p>
-            <p class="biographys__title">{{ biography.title }}</p>
-            <p class="biographys__date">
-              <time>{{ biography.date }}</time>
-            </p>
-            <p class="biographys__text">{{ biography.text }}</p>
-            <p class="biographys__more">
-              <nuxt-link :to="`/biography/${biography.id}/`">...more</nuxt-link>
-            </p>
-          </li>
-        </ul>
+        <BiographyList
+          class="biographys__content"
+          :biographys="biographys"
+          :omit="false"
+        />
       </section>
     </ContentsWrap>
   </MainWrapper>
@@ -60,12 +39,14 @@ import { mapGetters } from 'vuex'
 import MainWrapper from '~/components/molecules/MainWrapper.vue'
 import ContentsWrap from '~/components/molecules/ContentsWrap.vue'
 import HeadingBasic from '~/components/atoms/HeadingBasic.vue'
+import BiographyList from '~/components/organism/BiographyList.vue'
 
 export default Vue.extend({
   components: {
     MainWrapper,
     ContentsWrap,
-    HeadingBasic
+    HeadingBasic,
+    BiographyList
   },
   computed: {
     ...mapGetters({
@@ -84,38 +65,11 @@ h1 img {
   margin-top: 42px;
 }
 
-.biographys__list {
+.main-lead {
+  line-height: 2;
+}
+
+.biographys__content {
   margin-top: 16px;
-}
-
-.biographys__list li:not(:first-child) {
-  margin-top: 16px;
-}
-
-.biographys__img img {
-  width: 100%;
-}
-
-.biographys__title {
-  margin-top: 12px;
-  font-size: var(--largeMiddleFontSize);
-}
-
-.biographys__date {
-  font-size: var(--minFontSize);
-  color: var(--gray);
-  margin-top: 10px;
-}
-
-.biographys__text {
-  margin-top: 10px;
-  white-space: pre-wrap;
-  height: 5em;
-  overflow: hidden;
-}
-
-.biographys__more {
-  text-align: right;
-  margin-top: 10px;
 }
 </style>
