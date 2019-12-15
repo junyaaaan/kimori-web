@@ -35,7 +35,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapGetters } from 'vuex'
 import MainWrapper from '~/components/molecules/MainWrapper.vue'
 import ContentsWrap from '~/components/molecules/ContentsWrap.vue'
 import HeadingBasic from '~/components/atoms/HeadingBasic.vue'
@@ -49,9 +48,9 @@ export default Vue.extend({
     BiographyList
   },
   computed: {
-    ...mapGetters({
-      biographys: 'biography/two'
-    })
+    biographys() {
+      return this.$store.getters['biography/two']
+    }
   }
 })
 </script>
