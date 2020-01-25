@@ -44,6 +44,12 @@
               </nuxt-link>
             </li>
           </ul>
+
+          <ThePager
+            class="pager-wrap"
+            :total-page-num="totalPageNum"
+            :page-num="pageNum"
+          />
         </SectionInner>
       </section>
     </ContentsWrap>
@@ -56,17 +62,29 @@ import MainWrapper from '~/components/molecules/MainWrapper.vue'
 import ContentsWrap from '~/components/molecules/ContentsWrap.vue'
 import HeadingBasic from '~/components/atoms/HeadingBasic.vue'
 import SectionInner from '~/components/molecules/SectionInner.vue'
+import ThePager from '~/components/molecules/ThePager.vue'
 
 export default Vue.extend({
   components: {
     MainWrapper,
     ContentsWrap,
     HeadingBasic,
-    SectionInner
+    SectionInner,
+    ThePager
   },
-  asyncData({ store, params }) {
+  watchQuery: ['page'],
+  asyncData({ store, params, query }) {
+    // ルートに応じたジャンル変更
     const initialGenre = params.genre ? params.genre : 'ALL'
     store.commit('gallery/changeCurrentGenre', initialGenre)
+
+    // クエリに応じたページ数に変更
+    const initialPageNum = (): number => {
+      if (!query.page) return 1
+
+      return Number(query.page)
+    }
+    store.commit('gallery/changePageNum', initialPageNum())
   },
   computed: {
     tagList() {
@@ -75,6 +93,14 @@ export default Vue.extend({
 
     gallerys() {
       return this.$store.getters['gallery/refineGenre']
+    },
+
+    totalPageNum() {
+      return this.$store.getters['gallery/totalPageNum']
+    },
+
+    pageNum(): number {
+      return this.$store.state.gallery.pageNum
     }
   }
 })
@@ -133,5 +159,9 @@ export default Vue.extend({
 
 .tag-list li {
   margin-right: 5px;
+}
+
+.pager-wrap {
+  margin-top: 16px;
 }
 </style>
