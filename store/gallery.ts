@@ -12,6 +12,7 @@ interface Gallery {
 interface State {
   gallerys: Gallery[]
   currentGenre: string
+  currentDetailId: number
   pageNum: number
   limit: 20
 }
@@ -19,6 +20,7 @@ interface State {
 export const state = (): State => ({
   gallerys,
   currentGenre: 'ALL',
+  currentDetailId: 1,
   pageNum: 1,
   limit: 20,
 })
@@ -76,6 +78,13 @@ export const getters: GetterTree<RootState, RootState> = {
     })
 
     return Math.ceil(currentGallerys.length / state.limit)
+  },
+
+  // 詳細
+  detailData(state){
+    return state.gallerys.filter(val=>{
+      if(val.id === state.currentDetailId) return true
+    })
   }
 }
 
@@ -89,4 +98,9 @@ export const mutations: MutationTree<State> = {
   changePageNum(state, num: number) {
     state.pageNum = num
   },
+
+  // ページ数変更
+  changeCurrentDetailId(state, num: number) {
+    state.currentDetailId = num
+  }
 }

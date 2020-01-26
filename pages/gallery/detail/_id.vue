@@ -1,0 +1,55 @@
+<template>
+  <MainWrapper>
+    <ContentsWrap>
+      <section>
+        <HeadingBasic :tag="1" :level="1">Gallery</HeadingBasic>
+
+        <SectionInner>
+          <img
+            :src="require(`~/assets/images/gallery/${detailData.id}/img.png`)"
+            :srcset="
+              `${require(`~/assets/images/gallery/${detailData.id}/img.png`)} 1x,
+              ${require(`~/assets/images/gallery/${detailData.id}/img@2x.png`)} 2x`
+            "
+            alt=""
+          />
+          <h2>{{ detailData.title }}</h2>
+          <p>
+            <time>{{ detailData.date }}</time>
+          </p>
+          <p>
+            {{ detailData.text }}
+          </p>
+        </SectionInner>
+      </section>
+    </ContentsWrap>
+  </MainWrapper>
+</template>
+
+<script lang="ts">
+import Vue from 'vue'
+import MainWrapper from '~/components/molecules/MainWrapper.vue'
+import ContentsWrap from '~/components/molecules/ContentsWrap.vue'
+import HeadingBasic from '~/components/atoms/HeadingBasic.vue'
+import SectionInner from '~/components/molecules/SectionInner.vue'
+
+export default Vue.extend({
+  components: {
+    MainWrapper,
+    ContentsWrap,
+    HeadingBasic,
+    SectionInner
+  },
+  asyncData({ params, store }) {
+    console.log(Number(params.id))
+    store.commit('gallery/changeCurrentDetailId', Number(params.id))
+  },
+  computed: {
+    detailData() {
+      return this.$store.getters['gallery/detailData'][0]
+    }
+  }
+})
+</script>
+
+<style lang="postcss" scoped></style>
