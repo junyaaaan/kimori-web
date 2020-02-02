@@ -12,13 +12,19 @@
               ${require(`~/assets/images/gallery/${detailData.id}/img@2x.png`)} 2x`
             "
             alt=""
+            class="main-image"
           />
-          <h2>{{ detailData.title }}</h2>
-          <p>
+          <HeadingBasic :tag="2" :level="2" class="heading"
+            >{{ detailData.title }}
+          </HeadingBasic>
+          <p class="date">
             <time>{{ detailData.date }}</time>
           </p>
-          <p>
+          <div class="text">
             {{ detailData.text }}
+          </div>
+          <p class="back-link">
+            <nuxt-link to="/gallery/">&lt; Galleryへ戻る</nuxt-link>
           </p>
         </SectionInner>
       </section>
@@ -51,4 +57,31 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="postcss" scoped></style>
+<style lang="postcss" scoped>
+.main-image {
+  width: 100%;
+}
+
+.heading {
+  margin-top: 16px;
+}
+
+.date {
+  line-height: 1;
+}
+
+.date time {
+  font-size: 11px;
+  color: #ccc;
+}
+
+.text {
+  margin-top: 16px;
+  line-height: 2;
+  word-wrap: break-word;
+}
+
+.back-link {
+  margin-top: 32px;
+}
+</style>
