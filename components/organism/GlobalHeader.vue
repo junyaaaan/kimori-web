@@ -9,7 +9,7 @@
     <div v-if="menuIsOpen" class="drawer-backdrop" @click="toggleMenu"></div>
 
     <transition name="drawer">
-      <Drawer v-if="menuIsOpen" />
+      <Drawer v-if="menuIsOpen" @linkClick="toggleMenu" />
     </transition>
   </header>
 </template>

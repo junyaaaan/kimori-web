@@ -41,7 +41,6 @@ export default Vue.extend({
     SectionInner
   },
   asyncData({ params, store }) {
-    console.log(Number(params.id))
     store.commit('gallery/changeCurrentDetailId', Number(params.id))
   },
   computed: {

@@ -2,13 +2,18 @@
   <nav>
     <ul class="drawer">
       <li v-for="(category, index) in categorysData" :key="index">
-        <nuxt-link :to="category.path">{{ category.name }}</nuxt-link>
-      </li>
-      <li>
-        <nuxt-link
-          to="https://docs.google.com/forms/d/e/1FAIpQLSc6gt01XJe8M3i3X-nMZ4SNCecsCF9ZBDnbNo-LQgy5cdxdSA/viewform?usp=sf_link"
-          >Contact</nuxt-link
+        <a
+          v-if="isOutsideLink(category.path)"
+          :href="category.path"
+          target="_blank"
+          rel="noopener noreferrer"
+          @click.native="linkClick"
         >
+          {{ category.name }}
+        </a>
+        <nuxt-link v-else :to="category.path" @click.native="linkClick">{{
+          category.name
+        }}</nuxt-link>
       </li>
     </ul>
   </nav>
@@ -36,8 +41,28 @@ export default Vue.extend({
         {
           name: 'Biography',
           path: '/biography/'
+        },
+        {
+          name: 'Contact',
+          path:
+            'https://docs.google.com/forms/d/e/1FAIpQLSc6gt01XJe8M3i3X-nMZ4SNCecsCF9ZBDnbNo-LQgy5cdxdSA/viewform?usp=sf_link'
         }
       ]
+    }
+  },
+  methods: {
+    /**
+     * 外部リンク判定
+     */
+    isOutsideLink(url: string) {
+      return url.startsWith('https') || url.startsWith('http')
+    },
+
+    /**
+     * ドロワーを閉じる
+     */
+    linkClick() {
+      this.$emit('linkClick')
     }
   }
 })
