@@ -1,3 +1,5 @@
+import { gallerys } from './assets/data/gallerys.json'
+
 export default {
   mode: 'universal',
   /*
@@ -70,5 +72,29 @@ export default {
       }
     }
     // extend(config, ctx) {}
+  },
+  generate: {
+    routes() {
+      let result = []
+      const gallerysTagRoutes = () => {
+        const galleryTagPath = gallerys.reduce(
+          (acc, val) => {
+            const paths = val.tag.map((tag) => {
+              const shapingTag = encodeURI(tag)
+
+              return `/gallery/${shapingTag}/`
+            })
+            return [...acc, ...paths]
+          },
+          ['/gallery/']
+        )
+
+        return Array.from(new Set(galleryTagPath))
+      }
+
+      result = [...result, ...gallerysTagRoutes()]
+
+      return result
+    }
   }
 }
