@@ -8,7 +8,8 @@ interface Gallery {
   images: string[]
   size: string
   technique: string
-  price: number,
+  price: number
+  soled: boolean
   year: number
 }
 

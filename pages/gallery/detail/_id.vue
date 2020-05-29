@@ -2,27 +2,35 @@
   <MainWrapper>
     <ContentsWrap>
       <section>
-        <HeadingBasic :tag="1" :level="1">Gallery</HeadingBasic>
+        <HeadingBasic :tag="1" :level="1">{{ detailData.title }}</HeadingBasic>
 
         <SectionInner>
           <img
-            :src="require(`~/assets/images/gallery/${detailData.id}/img.png`)"
+            v-for="(image, index) in detailData.images"
+            :key="index"
+            :src="
+              require(`~/assets/images/gallery/${detailData.id}/${detailData.images[0]}.jpg`)
+            "
             :srcset="
-              `${require(`~/assets/images/gallery/${detailData.id}/img.png`)} 1x,
-              ${require(`~/assets/images/gallery/${detailData.id}/img@2x.png`)} 2x`
+              `${require(`~/assets/images/gallery/${detailData.id}/${detailData.images[0]}.webp`)} 1x,
+              ${require(`~/assets/images/gallery/${detailData.id}/${detailData.images[0]}@2x.webp`)} 2x`
             "
             alt=""
             class="main-image"
           />
-          <HeadingBasic :tag="2" :level="2" class="heading"
-            >{{ detailData.title }}
-          </HeadingBasic>
-          <p class="date">
-            <time>{{ detailData.date }}</time>
-          </p>
-          <div class="text">
-            {{ detailData.text }}
-          </div>
+
+          <ul class="info">
+            <li>
+              <time>{{ detailData.year }}</time>
+            </li>
+
+            <li>{{ detailData.size }}</li>
+            <li>{{ detailData.technique }}</li>
+            <li :class="{ 'price--soled': detailData.soled }">
+              {{ detailData.price }}JPY
+            </li>
+          </ul>
+
           <p class="back-link">
             <nuxt-link to="/gallery/">&lt; Galleryへ戻る</nuxt-link>
           </p>
@@ -47,7 +55,7 @@ export default Vue.extend({
     SectionInner
   },
   asyncData({ params, store }) {
-    store.commit('gallery/changeCurrentDetailId', Number(params.id))
+    store.commit('gallery/changeCurrentDetailId', params.id)
   },
   computed: {
     detailData() {
@@ -66,19 +74,12 @@ export default Vue.extend({
   margin-top: 16px;
 }
 
-.date {
-  line-height: 1;
+.info {
+  margin-top: 12px;
 }
 
-.date time {
-  font-size: 11px;
-  color: #ccc;
-}
-
-.text {
-  margin-top: 16px;
-  line-height: 2;
-  word-wrap: break-word;
+.price--soled {
+  text-decoration: line-through;
 }
 
 .back-link {
