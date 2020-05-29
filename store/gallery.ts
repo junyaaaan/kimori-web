@@ -2,17 +2,20 @@ import { GetterTree, MutationTree } from 'vuex'
 import { gallerys } from '~/assets/data/gallerys.json'
 
 interface Gallery {
-  id: number
+  id: string
   title: string
   tag: string[]
-  date: string
-  text: string
+  images: string[]
+  size: string
+  technique: string
+  price: number,
+  year: number
 }
 
 interface State {
   gallerys: Gallery[]
   currentGenre: string
-  currentDetailId: number
+  currentDetailId: string
   pageNum: number
   limit: 20
 }
@@ -20,7 +23,7 @@ interface State {
 export const state = (): State => ({
   gallerys,
   currentGenre: 'ALL',
-  currentDetailId: 1,
+  currentDetailId: '',
   pageNum: 1,
   limit: 20,
 })
@@ -100,7 +103,7 @@ export const mutations: MutationTree<State> = {
   },
 
   // ページ数変更
-  changeCurrentDetailId(state, num: number) {
-    state.currentDetailId = num
+  changeCurrentDetailId(state, id: string) {
+    state.currentDetailId = id
   }
 }
