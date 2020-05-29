@@ -25,15 +25,16 @@
               <nuxt-link :to="`/gallery/detail/${gallery.id}/`">
                 <img
                   :src="
-                    require(`~/assets/images/gallery/${gallery.id}/img.png`)
+                    require(`~/assets/images/gallery/${gallery.id}/${gallery.images[0]}.jpg`)
                   "
                   :srcset="
                     `
-                    ${require(`~/assets/images/gallery/${gallery.id}/img.png`)} 1x,
-                    ${require(`~/assets/images/gallery/${gallery.id}/img@2x.png`)} 2x
+                    ${require(`~/assets/images/gallery/${gallery.id}/${gallery.images[0]}.webp`)} 1x,
+                    ${require(`~/assets/images/gallery/${gallery.id}/${gallery.images[0]}@2x.webp`)} 2x
                   `
                   "
                   alt=""
+                  loading="lazy"
                 />
                 <p class="list__title">{{ gallery.title }}</p>
                 <ul class="tag-list">
