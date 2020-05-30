@@ -23,19 +23,24 @@
               class="list__item"
             >
               <nuxt-link :to="`/gallery/detail/${gallery.id}/`">
-                <img
-                  :src="
-                    require(`~/assets/images/gallery/${gallery.id}/${gallery.images[0]}.jpg`)
-                  "
-                  :srcset="
-                    `
-                    ${require(`~/assets/images/gallery/${gallery.id}/${gallery.images[0]}.webp`)} 1x,
-                    ${require(`~/assets/images/gallery/${gallery.id}/${gallery.images[0]}@2x.webp`)} 2x
-                  `
-                  "
-                  alt=""
-                  loading="lazy"
-                />
+                <picture>
+                  <source
+                    :srcset="
+                      `
+                        ${require(`~/assets/images/gallery/${gallery.id}/${gallery.images[0]}.webp`)} 1x,
+                        ${require(`~/assets/images/gallery/${gallery.id}/${gallery.images[0]}@2x.webp`)} 2x
+                      `
+                    "
+                    type="image/webp"
+                  />
+                  <img
+                    :src="
+                      require(`~/assets/images/gallery/${gallery.id}/${gallery.images[0]}.jpg`)
+                    "
+                    alt=""
+                    loading="lazy"
+                  />
+                </picture>
                 <p class="list__title">{{ gallery.title }}</p>
                 <ul class="tag-list">
                   <li v-for="(tag, tagIndex) in gallery.tag" :key="tagIndex">
