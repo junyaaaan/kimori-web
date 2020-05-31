@@ -5,19 +5,26 @@
         <HeadingBasic :tag="1" :level="1">{{ detailData.title }}</HeadingBasic>
 
         <SectionInner>
-          <img
-            v-for="(image, index) in detailData.images"
-            :key="index"
-            :src="
-              require(`~/assets/images/gallery/${detailData.id}/${detailData.images[0]}.jpg`)
-            "
-            :srcset="
-              `${require(`~/assets/images/gallery/${detailData.id}/${detailData.images[0]}.webp`)} 1x,
-              ${require(`~/assets/images/gallery/${detailData.id}/${detailData.images[0]}@2x.webp`)} 2x`
-            "
-            alt=""
-            class="main-image"
-          />
+          <picture>
+            <source
+              v-for="(image, index) in detailData.images"
+              :key="index"
+              :srcset="
+                `
+                  ${require(`~/assets/images/gallery/${detailData.id}/${detailData.images[0]}.webp`)} 1x,
+                  ${require(`~/assets/images/gallery/${detailData.id}/${detailData.images[0]}@2x.webp`)} 2x
+                `
+              "
+              type="image/webp"
+            />
+            <img
+              :src="
+                require(`~/assets/images/gallery/${detailData.id}/${detailData.images[0]}.jpg`)
+              "
+              alt=""
+              loading="lazy"
+            />
+          </picture>
 
           <ul class="info">
             <li>
@@ -32,7 +39,7 @@
           </ul>
 
           <p class="back-link">
-            <nuxt-link to="/gallery/">&lt; Galleryへ戻る</nuxt-link>
+            <nuxt-link to="/gallery/">back to Gallery</nuxt-link>
           </p>
         </SectionInner>
       </section>
@@ -76,6 +83,7 @@ export default Vue.extend({
 
 .info {
   margin-top: 12px;
+  color: var(--gray);
 }
 
 .price--soled {
