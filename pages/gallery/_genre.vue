@@ -6,7 +6,7 @@
 
         <SectionInner>
           <ul class="sorter">
-            <li><nuxt-link to="/gallery/">ALL</nuxt-link></li>
+            <li><nuxt-link to="/gallery/">All</nuxt-link></li>
             <li
               v-for="(tag, index) in tagList"
               :key="index"
@@ -81,7 +81,7 @@ export default Vue.extend({
   watchQuery: ['page'],
   asyncData({ store, params, query }) {
     // ルートに応じたジャンル変更
-    const initialGenre = params.genre ? params.genre : 'ALL'
+    const initialGenre = params.genre ? params.genre : 'All'
     store.commit('gallery/changeCurrentGenre', initialGenre)
 
     // クエリに応じたページ数に変更

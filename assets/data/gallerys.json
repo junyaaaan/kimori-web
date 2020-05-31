@@ -3,7 +3,7 @@
     {
       "id": "hoalu",
       "title": "HoaLu",
-      "tag": ["landscape"],
+      "tag": ["Landscape"],
       "images": [
         "main"
       ],
@@ -16,7 +16,7 @@
     {
       "id": "above-us-only-sky",
       "title": "Above us only sky",
-      "tag": ["landscape"],
+      "tag": ["Landscape"],
       "images": [
         "main"
       ],
@@ -29,7 +29,7 @@
     {
       "id": "nostalgia",
       "title": "Nostalgia",
-      "tag": ["landscape"],
+      "tag": ["Landscape"],
       "images": [
         "main"
       ],
@@ -42,7 +42,7 @@
     {
       "id": "the-silence-of-the-green",
       "title": "The silence of the Green",
-      "tag": ["landscape"],
+      "tag": ["Landscape"],
       "images": [
         "main"
       ],
@@ -55,7 +55,7 @@
     {
       "id": "river",
       "title": "RIVER",
-      "tag": ["landscape"],
+      "tag": ["Landscape"],
       "images": [
         "main"
       ],
@@ -68,7 +68,7 @@
     {
       "id": "torso-of-gold",
       "title": "Torso of Gold",
-      "tag": ["TORSO"],
+      "tag": ["Torso"],
       "images": [
         "main"
       ],
@@ -81,7 +81,7 @@
     {
       "id": "torso-of-black",
       "title": "Torso of Black",
-      "tag": ["TORSO"],
+      "tag": ["Torso"],
       "images": [
         "main"
       ],
@@ -94,7 +94,7 @@
     {
       "id": "torso",
       "title": "torso",
-      "tag": ["TORSO"],
+      "tag": ["Torso"],
       "images": [
         "main"
       ],
@@ -107,7 +107,7 @@
     {
       "id": "rainy-season",
       "title": "Rainy Season",
-      "tag": ["RAIN"],
+      "tag": ["Rain"],
       "images": [
         "main"
       ],
@@ -120,7 +120,7 @@
     {
       "id": "vietnam-rain",
       "title": "Vietnam Rain",
-      "tag": ["RAIN"],
+      "tag": ["Rain"],
       "images": [
         "main"
       ],
@@ -133,7 +133,7 @@
     {
       "id": "rain-and-silence",
       "title": "Rain and Silence",
-      "tag": ["RAIN"],
+      "tag": ["Rain"],
       "images": [
         "main"
       ],
@@ -146,7 +146,7 @@
     {
       "id": "vietnam-rain-ii",
       "title": "Vietnam Rain Ⅱ",
-      "tag": ["RAIN"],
+      "tag": ["Rain"],
       "images": [
         "main"
       ],
@@ -159,7 +159,7 @@
     {
       "id": "rain-and-shine",
       "title": "Rain and Shine",
-      "tag": ["RAIN"],
+      "tag": ["Rain"],
       "images": [
         "main"
       ],
@@ -172,7 +172,7 @@
     {
       "id": "skin-of-red",
       "title": "Skin of Red",
-      "tag": ["SKIN"],
+      "tag": ["Skin"],
       "images": [
         "main"
       ],
@@ -185,7 +185,7 @@
     {
       "id": "skin-of-freeze",
       "title": "Skin of Freeze",
-      "tag": ["SKIN"],
+      "tag": ["Skin"],
       "images": [
         "main"
       ],
@@ -198,7 +198,7 @@
     {
       "id": "skin-of-wave",
       "title": "Skin of Wave",
-      "tag": ["SKIN"],
+      "tag": ["Skin"],
       "images": [
         "main"
       ],
@@ -211,7 +211,7 @@
     {
       "id": "skin-of-leaf",
       "title": "Skin of Leaf",
-      "tag": ["SKIN"],
+      "tag": ["Skin"],
       "images": [
         "main"
       ],
@@ -224,7 +224,7 @@
     {
       "id": "skin-of-moon",
       "title": "Skin of Moon",
-      "tag": ["SKIN"],
+      "tag": ["Skin"],
       "images": [
         "main"
       ],
@@ -237,7 +237,7 @@
     {
       "id": "skin-of-sand",
       "title": "Skin of Sand",
-      "tag": ["SKIN"],
+      "tag": ["Skin"],
       "images": [
         "main"
       ],
@@ -250,7 +250,7 @@
     {
       "id": "physical-concept-leap",
       "title": "Physical Concept leap",
-      "tag": ["physical concept"],
+      "tag": ["Physical Concept"],
       "images": [
         "main"
       ],
@@ -263,7 +263,7 @@
     {
       "id": "physical-concept-adolescence",
       "title": "Physical Concept Adolescence",
-      "tag": ["physical concept"],
+      "tag": ["Physical Concept"],
       "images": [
         "main"
       ],
@@ -276,7 +276,7 @@
     {
       "id": "physical-concept-body-of-grass",
       "title": "Physical Concept Body of Grass",
-      "tag": ["physical concept"],
+      "tag": ["Physical Concept"],
       "images": [
         "main"
       ],
@@ -289,7 +289,7 @@
     {
       "id": "physical-concept-naked",
       "title": "Physical Concept Naked",
-      "tag": ["physical concept"],
+      "tag": ["Physical Concept"],
       "images": [
         "main"
       ],

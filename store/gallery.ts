@@ -23,7 +23,7 @@ interface State {
 
 export const state = (): State => ({
   gallerys,
-  currentGenre: 'ALL',
+  currentGenre: 'All',
   currentDetailId: '',
   pageNum: 1,
   limit: 20,
@@ -53,7 +53,7 @@ export const getters: GetterTree<RootState, RootState> = {
 
   // 選択されているジャンルの作品リスト
   refineGenre(state, getters) {
-    if (state.currentGenre === 'ALL')
+    if (state.currentGenre === 'All')
       return state.gallerys.slice(getters.startItem, getters.endItem)
 
     return state.gallerys.filter((val) => {
@@ -75,7 +75,7 @@ export const getters: GetterTree<RootState, RootState> = {
   // 選択したジャンルの最大ページ数
   totalPageNum(state) {
     const currentGallerys = state.gallerys.filter(val => {
-      if (state.currentGenre === 'ALL')
+      if (state.currentGenre === 'All')
         return true
 
       return val.tag.includes(state.currentGenre)
