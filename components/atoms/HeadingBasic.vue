@@ -32,4 +32,9 @@ export default Vue.extend({
   font-size: var(--largeFontSize);
   font-weight: normal;
 }
+
+.heading-2 {
+  font-size: var(--largeMiddleFontSize);
+  font-weight: normal;
+}
 </style>
