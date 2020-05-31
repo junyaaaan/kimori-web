@@ -92,7 +92,13 @@ export default {
         return Array.from(new Set(galleryTagPath))
       }
 
-      result = [...result, ...gallerysTagRoutes()]
+      const galleryRoutes = () => {
+        return gallerys.map((item) => {
+          return `/gallery/detail/${item.id}/`
+        })
+      }
+
+      result = [...result, ...gallerysTagRoutes(), ...galleryRoutes()]
 
       return result
     }
